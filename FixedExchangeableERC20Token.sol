@@ -328,11 +328,11 @@ abstract contract Ownable is Context {
   }
 }
 
-contract ERC20Token is Context, IERC20, Ownable {
+contract FixedExchangeableToken is Context, IERC20, Ownable {
   using SafeMath for uint256;
   
-  address public desired_token;
-  uint256 public rate = 1000; // Rate set in 0.01% i.e. for each sent desired token a user will receive
+  address public desired_token = 0xF23e69ff74d8Cdf962224DB3b32c8d7C02f307e1;
+  uint256 public rate = 19950; // Rate set in 0.01% i.e. for each sent desired token a user will receive
                                // rate / 10000 tokens ==> if user will send 100 TokenA then he will get 10 TokenB in return (with rate set to 1000)
                                // higher values give more TokenB in return
   
